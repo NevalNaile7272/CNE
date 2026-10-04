@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNE BİTKİ DOKTORUNUZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="floating f1">🌿</div>
+    <div class="floating f2">🌸</div>
+    <div class="floating f3">🌱</div>
+    <div class="floating f4">🌸</div>
+    <div class="floating f5">🍃</div>
+
+    <div class="hero-content">
+        <div class="badge">🌱 AKILLI BİTKİ BAKIM SİSTEMİ</div>
+        <h1>CNE BİTKİ <span>DOKTORUNUZ</span></h1>
+        <p>Bitkilerinizin derdine derman olmaya geldik</p>
+    </div>
+</header>
+
+<nav>
+    <button class="nav-btn active" data-page="plants">🌿 Bitkiler</button>
+    <button class="nav-btn" data-page="greenhouse">🌡️ Sera Durumu</button>
+</nav>
+
+<main>
+
+<section id="plants" class="page active">
+
+    <div class="section-title">
+        <span>🌱</span>
+        <div>
+            <h2>Bitkilerim</h2>
+            <p>Bitkini seç, bilgilerini gör ve sulama ihtiyacını hesapla.</p>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input id="search" type="text" placeholder="🔎 Bitki ara...">
+    </div>
+
+    <div class="filters">
+        <button class="filter active" data-filter="all">Tümü</button>
+        <button class="filter" data-filter="Ev">🏠 Ev Bitkileri</button>
+        <button class="filter" data-filter="Sera">🌱 Sera Bitkileri</button>
+    </div>
+
+    <div class="plant-count">
+        <span id="count">0</span> bitki
+    </div>
+
+    <div id="plantGrid" class="plant-grid"></div>
+
+</section>
+
+
+<section id="greenhouse" class="page">
+
+    <div class="section-title">
+        <span>🌡️</span>
+        <div>
+            <h2>Sera Durumu</h2>
+            <p>Deneyap Kart 1 bağlandığında gerçek sensör değerleri burada gösterilir.</p>
+        </div>
+    </div>
+
+    <div class="connection-card">
+        <div>
+            <strong id="connectionText">Deneyap Kart bağlı değil</strong>
+            <small id="lastUpdate">Son güncelleme: --</small>
+        </div>
+
+        <div id="connectionDot" class="connection-dot offline"></div>
+    </div>
+
+    <div class="sensor-grid">
+
+        <div class="sensor-card">
+            <span>💧</span>
+            <small>Toprak Nemi</small>
+            <strong id="soilValue">--</strong>
+            <em>%</em>
+        </div>
+
+        <div class="sensor-card">
+            <span>🌡️</span>
+            <small>Sıcaklık</small>
+            <strong id="temperatureValue">--</strong>
+            <em>°C</em>
+        </div>
+
+        <div class="sensor-card">
+            <span>💨</span>
+            <small>Hava Nemi</small>
+            <strong id="humidityValue">--</strong>
+            <em>%</em>
+        </div>
+
+        <div class="sensor-card">
+            <span>🚰</span>
+            <small>Pompa</small>
+            <strong id="pumpValue">--</strong>
+            <em></em>
+        </div>
+
+        <div class="sensor-card">
+            <span>💦</span>
+            <small>Pompa Akışı</small>
+            <strong id="flowValue">--</strong>
+            <em>mL/s</em>
+        </div>
+
+    </div>
+
+    <div class="device-info">
+
+        <div>
+            <span>Deneyap Kart</span>
+            <strong>Deneyap Kart 1</strong>
+        </div>
+
+        <div>
+            <span>Bağlantı</span>
+            <strong id="deviceConnection">Bekleniyor</strong>
+        </div>
+
+        <div>
+            <span>Yerel Adres</span>
+            <strong id="deviceAddress">--</strong>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <button id="closeModal" class="close">×</button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
