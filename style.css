@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+    color: #253329;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.35), transparent 25%),
+        linear-gradient(
+            180deg,
+            #8f5de7 0%,
+            #a875e9 18%,
+            #bca0ed 36%,
+            #9bd49d 68%,
+            #55ad72 100%
+        );
+    background-attachment: fixed;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+.hero {
+    min-height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.badge {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.85);
+    color: #557042;
+    font-weight: 800;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
+}
+
+h1 {
+    font-family: "Baloo 2", cursive;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: .9;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0 7px 20px rgba(48,24,70,.25);
+}
+
+h1 span {
+    display: block;
+    color: #d9ffbf;
+}
+
+.hero p {
+    color: white;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.floating {
+    position: absolute;
+    font-size: 55px;
+    opacity: .85;
+    animation: float 5s ease-in-out infinite;
+}
+
+.f1 { left: 8%; top: 30%; }
+.f2 { left: 20%; top: 65%; animation-delay: 1s; }
+.f3 { right: 12%; top: 25%; animation-delay: .5s; }
+.f4 { right: 22%; top: 67%; animation-delay: 1.5s; }
+.f5 { right: 5%; top: 48%; animation-delay: 2s; }
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(5deg);
+    }
+}
+
+nav {
+    width: min(1000px, 92%);
+    margin: -28px auto 35px;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.13);
+}
+
+.nav-btn {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    border-radius: 17px;
+    background: transparent;
+    font-size: 17px;
+    font-weight: 800;
+    color: #52604f;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: #6db67b;
+    color: white;
+}
+
+main {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+.page {
+    display: none;
+    padding-bottom: 70px;
+}
+
+.page.active {
+    display: block;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-title > span {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    background: white;
+    border-radius: 18px;
+    font-size: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
+}
+
+.section-title h2 {
+    font-family: "Baloo 2", cursive;
+    font-size: 38px;
+    color: white;
+}
+
+.section-title p {
+    color: white;
+    font-weight: 700;
+}
+
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 17px 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.92);
+    font-size: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.filter {
+    border: none;
+    padding: 11px 17px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.8);
+    color: #52604f;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.filter.active {
+    background: #536e59;
+    color: white;
+}
+
+.plant-count {
+    color: white;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.plant-card {
+    background: rgba(255,255,255,.94);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.1);
+    transition: .25s;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+}
+
+.plant-icon {
+    height: 105px;
+    border-radius: 19px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #e4f8dd, #e8dcfa);
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.plant-type {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 5px 9px;
+    border-radius: 10px;
+    background: #edf5e9;
+    color: #557052;
+    margin-bottom: 8px;
+}
+
+.plant-card h3 {
+    font-family: "Baloo 2", cursive;
+    font-size: 25px;
+    line-height: 1;
+    margin-bottom: 9px;
+}
+
+.plant-card p {
+    color: #68736c;
+    line-height: 1.55;
+    font-size: 14px;
+    min-height: 45px;
+    margin-bottom: 15px;
+}
+
+.card-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.card-buttons button {
+    border: none;
+    padding: 12px 8px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.info-btn {
+    background: #ece4fa;
+    color: #704aa8;
+}
+
+.water-btn {
+    background: #dff3e2;
+    color: #3d7650;
+}
+
+.card-buttons button:hover {
+    transform: scale(1.03);
+}
+
+.connection-card {
+    background: rgba(255,255,255,.92);
+    border-radius: 22px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.connection-card strong {
+    display: block;
+    font-size: 18px;
+}
+
+.connection-card small {
+    color: #78827b;
+}
+
+.connection-dot {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+}
+
+.offline {
+    background: #c9c9c9;
+}
+
+.online {
+    background: #43b96b;
+    box-shadow: 0 0 15px #43b96b;
+}
+
+.sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.sensor-card {
+    background: rgba(255,255,255,.94);
+    padding: 22px;
+    border-radius: 23px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.sensor-card span {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.sensor-card small {
+    display: block;
+    color: #78827b;
+    font-weight: 700;
+}
+
+.sensor-card strong {
+    font-family: "Baloo 2", cursive;
+    font-size: 35px;
+    color: #405c46;
+}
+
+.sensor-card em {
+    color: #7c877f;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.device-info {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.device-info div {
+    background: rgba(255,255,255,.9);
+    padding: 18px;
+    border-radius: 18px;
+}
+
+.device-info span {
+    display: block;
+    color: #77827a;
+    font-size: 13px;
+}
+
+.device-info strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(35,25,45,.55);
+    backdrop-filter: blur(7px);
+    z-index: 100;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: min(650px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    border: none;
+    background: #f0f0f0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-family: "Baloo 2", cursive;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.info-section {
+    background: #f5f8f3;
+    padding: 16px;
+    border-radius: 17px;
+    margin-bottom: 12px;
+}
+
+.info-section strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #52715a;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    border: 1px solid #d8dfd9;
+    padding: 12px;
+    border-radius: 12px;
+    outline: none;
+}
+
+.save-reference,
+.calculate-button {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    background: #609f6d;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 18px;
+    border-radius: 17px;
+    background: #e8f6e9;
+    color: #376642;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+    .plant-grid,
+    .sensor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .device-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 310px;
+    }
+
+    .floating {
+        font-size: 35px;
+    }
+
+    nav {
+        margin-top: -20px;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+    }
+
+    .plant-grid,
+    .sensor-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+}
